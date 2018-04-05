@@ -1,0 +1,2 @@
+{'name':'fixd','age':18,'sex':1}
+{'name':'fixd2','age':18,'sex':4}
