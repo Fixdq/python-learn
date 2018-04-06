@@ -1,14 +1,20 @@
 #!/usr/bin/env python3
 # encoding: utf-8
 # by fixdq
-
+"""
+ATM的相关操作
+查看用户信息
+转账
+还款
+取现
+"""
 from core import db_handler as db
 from conf import settings as st
-from core import auth
+from core import decorator
 
 
 # 查看用户信息
-@auth.auth
+@decorator.auth
 def show_user_info():
     uname = db.get_cur_user()
     userinfos = db.db_sel_user_info(uname)
@@ -22,7 +28,7 @@ def show_user_info():
 
 
 # 转账
-@auth.auth
+@decorator.auth
 def transfer():
     tag = True
     while tag:
@@ -62,7 +68,7 @@ def transfer():
 
 
 # 还款
-@auth.auth
+@decorator.auth
 def pay_back():
     # 获取当前登录用户名
     uname = db.get_cur_user()
@@ -104,7 +110,7 @@ def pay_back():
 
 
 # 取现
-@auth.auth
+@decorator.auth
 def with_draw():
     uname = db.get_cur_user()
     while True:

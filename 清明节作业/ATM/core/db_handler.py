@@ -1,19 +1,18 @@
 #!/usr/bin/env python3
 # encoding: utf-8
 # by fixdq
+"""
+所有对数据文件操作
 
+"""
 import json
 import os
 from conf import settings as st
+from lib import common
+from core import decorator
 
+logger = common.get_logger('transactions')
 
-# DB_ATUH = '/home/fixd/project/oldboy/清明节作业/ATM/db/current_user.json'
-
-
-# dic = {"uname":""}
-# with open(DB_ATUH, 'w',encoding='utf-8') as f:
-#     json.dump(dic,f)
-#
 
 # 查询数据  是否授权
 def get_is_auth():
@@ -105,6 +104,7 @@ def db_add_user(uname, pwd, balance, credit=st.CREDIT):
 
 
 # 更新用户信息
+@decorator.user_access(logger)
 def db_update_user(uname, money, account='balance', mode='-'):
     """
 
@@ -159,3 +159,10 @@ def db_sel_user_info(uname):
     db_path = get_path(uname)
     with open(db_path, encoding='utf-8') as f:
         return json.load(f)
+
+
+# 获取购物车列表
+def db_sel_product_list():
+    with open(st.DB_PRODUCTS, encoding='utf-8') as f:
+        return json.load(f)
+

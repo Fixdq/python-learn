@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 # encoding: utf-8
 # by fixdq
+"""
+程序的入口
 
+"""
 import sys
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))

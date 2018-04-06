@@ -1,64 +1,78 @@
 #!/usr/bin/env python3
 # encoding: utf-8
 # by fixdq
+"""
+程序的配置
+
+"""
 import os
-import logging.config
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # 当前登录的用户
-# DB_ATUH = r'%s/db/current_user.json' % BASE_DIR
 DB_ATUH = os.path.join(BASE_DIR, 'db', 'current_user.json', )
+# 商品信息路径
+DB_PRODUCTS = os.path.join(BASE_DIR, 'db', 'product_list.json', )
+# 用户信息路径
+DB_PATH_USERS = os.path.join(BASE_DIR, 'db', 'accounts', )
 
-DB_PATH_USERS = r'%s/db/accounts' % BASE_DIR
-LOG_PATH = r'%s/log/access.log' % BASE_DIR
-
+# 日志路径
+# 操作日志
+LOG_ACCESS_PATH = os.path.join(BASE_DIR, 'log', 'access', 'access.log', )
+# 交易记录
+LOG_TRANSACTIONS_PATH = os.path.join(BASE_DIR, 'log', 'transactions', 'transactions.log', )
+# msg_fmt
+MSG_FMT = '[uname:{uname}]-[money:{money}]-[account:{account}]-[mode:{mode}]'
 # 默认信用额度
 CREDIT = 15000
 
-# 定义三种日志输出格式 开始
-
-standard_format = '[%(asctime)s][%(threadName)s:%(thread)d][task_id:%(name)s][%(filename)s:%(lineno)d]' \
-                  '[%(levelname)s][%(message)s]'  # 其中name为getlogger指定的名字
-
-simple_format = '[%(levelname)s][%(asctime)s][%(filename)s:%(lineno)d]%(message)s'
-
-id_simple_format = '[%(levelname)s][%(asctime)s] %(message)s'
-
+# 定义日志输出格式
+# 时间--姓名--交易模式--交易金额
+format_access = '[%(levelname)s][%(asctime)s] %(message)s'
+format_transactions = '[%(levelname)s][%(asctime)s] %(message)s'
 LOGGING_DICT = {
     'version': 1,
     'disable_existing_loggers': False,
     'formatters': {
-        'standard': {
-            'format': standard_format
+        'access': {
+            'format': format_access
         },
-        'simple': {
-            'format': simple_format
+        'transactions': {
+            'format': format_transactions
         },
 
     },
     'filters': {},
     'handlers': {
-        'console': {
-            'level': 'DEBUG',
-            'class': 'logging.StreamHandler',  # 打印到屏幕
-            'formatter': 'simple'
-        },
-        'default': {
+        'access': {
             'level': 'DEBUG',
             'class': 'logging.handlers.RotatingFileHandler',  # 保存到文件
-            'formatter': 'standard',
-            'filename': LOG_PATH,  # 日志文件
+            'formatter': 'access',
+            'filename': LOG_ACCESS_PATH,  # 日志文件
             'maxBytes': 1024 * 1024 * 5,  # 日志大小 5M
             'backupCount': 5,
             'encoding': 'utf-8',  # 日志文件的编码，再也不用担心中文log乱码了
-        }
+        },
+        'transactions': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',  # 保存到文件
+            'formatter': 'transactions',
+            'filename': LOG_TRANSACTIONS_PATH,  # 日志文件
+            'maxBytes': 1024 * 1024 * 5,  # 日志大小 5M
+            'backupCount': 5,
+            'encoding': 'utf-8',  # 日志文件的编码，再也不用担心中文log乱码了
+        },
     },
     'loggers': {
-        '': {
-            'handlers': ['default', 'console'],  # 这里把上面定义的两个handler都加上，即log数据既写入文件又打印到屏幕
+        'access': {
+            'handlers': ['access'],
             'level': 'DEBUG',
-            'propagate': True,  # 向上（更高level的logger）传递
+            'propagate': False,
+        },
+        'transactions': {
+            'handlers': ['transactions'],
+            'level': 'DEBUG',
+            'propagate': False,
         },
     }
 }

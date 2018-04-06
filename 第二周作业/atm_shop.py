@@ -256,6 +256,9 @@ def shop_settle(product_car_list):
         if choice not in ['y', 'n']:
             print('输入不正确')
             continue
+
+        # 结算
+        shop_settle(product_car)
         if choice == 'y':
             # 确认购买
             # 更新用户余额 使用信用

@@ -1,20 +1,17 @@
 #!/usr/bin/env python3
 # encoding: utf-8
 # by fixdq
-
+"""
+用户相关操作
+登录
+注册
+获取输入的用户名
+获取输入的密码
+获取输入的密码
+获取充值的金额
+"""
 from conf import settings
 from core import db_handler
-
-
-# 用户认证装饰器
-def auth(func):
-    def wrapper(*args, **kwargs):
-        if db_handler.get_is_auth():
-            return func(*args, **kwargs)
-        else:
-            print("您还没登录！")
-
-    return wrapper
 
 
 # 用户登录
