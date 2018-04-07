@@ -27,9 +27,10 @@ MSG_FMT = '[uname:{uname}]-[money:{money}]-[account:{account}]-[mode:{mode}]'
 CREDIT = 15000
 
 # 定义日志输出格式
-# 时间--姓名--交易模式--交易金额
 format_access = '[%(levelname)s][%(asctime)s] %(message)s'
 format_transactions = '[%(levelname)s][%(asctime)s] %(message)s'
+
+
 LOGGING_DICT = {
     'version': 1,
     'disable_existing_loggers': False,

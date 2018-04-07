@@ -12,9 +12,10 @@ product_list = []
 uname = ''
 current_balance = 0
 
+
 # 初始化购物信息
 def shop_init():
-    global product_list,uname,current_balance
+    global product_list, uname, current_balance
     product_list = db.db_sel_product_list()
     uname = db.get_cur_user()
     current_balance = db.db_sel_user_money(uname, account='credit')
@@ -121,7 +122,8 @@ def shopping():
             car_add(pname, pprice)
         elif choice == 'q':
             if not product_car:
-                break
+                print('购物车没有商品～！～！～')
+                continue
             # 结算
             shop_settle(product_car)
             return

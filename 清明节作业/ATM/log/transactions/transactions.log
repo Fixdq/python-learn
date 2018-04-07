@@ -3,3 +3,7 @@
 [INFO][2018-04-06 14:22:53,448] [uname:qwe]-[money:105000]-[account:balance]-[mode:-]
 [INFO][2018-04-06 14:23:24,407] [uname:qwe]-[money:1]-[account:balance]-[mode:-]
 [INFO][2018-04-06 14:23:24,408] [uname:qwe]-[money:1]-[account:balance]-[mode:+]
+[INFO][2018-04-06 15:58:00,358] [uname:qwe]-[money:8000]-[account:credit]-[mode:-]
+[INFO][2018-04-06 15:58:09,474] [uname:qwe]-[money:200000]-[account:balance]-[mode:-]
+[INFO][2018-04-06 15:58:09,474] [uname:asd]-[money:200000]-[account:balance]-[mode:+]
+[INFO][2018-04-06 15:58:17,148] [uname:qwe]-[money:63000]-[account:balance]-[mode:-]

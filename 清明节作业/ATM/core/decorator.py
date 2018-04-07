@@ -7,6 +7,7 @@
 记录用户流水日志
 """
 from core import db_handler
+from core import auth as at
 from conf import settings
 
 
@@ -16,8 +17,9 @@ def auth(func):
         if db_handler.get_is_auth():
             return func(*args, **kwargs)
         else:
-            print("您还没登录！")
-
+            print("您还没登录！请先登录～！～！～")
+            at.login()
+            return func(*args, **kwargs)
     return wrapper
 
 
@@ -49,3 +51,4 @@ def user_access(logger):
         return wrapper
 
     return out
+

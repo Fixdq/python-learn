@@ -64,6 +64,7 @@ def with_draw():
 
 # 入口
 def run():
+    db.rm_cur_user()
     while True:
         print('''
         1.登录
@@ -84,7 +85,7 @@ def run():
                 login()
         elif choice == '2':
             if db.get_cur_user():
-                print('您已登录，请退出注册！')
+                print('您已登录，请退出在进行注册！')
             else:
                 register()
         elif choice == '3':
