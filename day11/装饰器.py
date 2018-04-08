@@ -5,38 +5,38 @@ import time
 
 
 # def index():
-#     time.sleep(0.5)
+#     test_time.sleep(0.5)
 #     print("这是主页")
 
 # def index():
-#     start_time = time.time()
-#     time.sleep(0.5)
+#     start_time = test_time.test_time()
+#     test_time.sleep(0.5)
 #     print("这是主页")
-#     end_time = time.time()
+#     end_time = test_time.test_time()
 #     print('传输时间：%s' % (end_time-start_time))
 #
 # index()
 
 # # lv 01
-# start_time = time.time()
+# start_time = test_time.test_time()
 # index()
-# end_time = time.time()
+# end_time = test_time.test_time()
 # print('传输时间：%s' % (end_time - start_time))
 
 
 
 
 # # lv 02
-# start_time = time.time()
+# start_time = test_time.test_time()
 # index()
-# end_time = time.time()
+# end_time = test_time.test_time()
 # print('传输时间：%s' % (end_time - start_time))
 
 # #lv 03
 # def wrapper(func):
-#     start_time = time.time()
+#     start_time = test_time.test_time()
 #     func()
-#     end_time = time.time()
+#     end_time = test_time.test_time()
 #     print('传输时间：%s' % (end_time - start_time))
 #
 # wrapper(index)

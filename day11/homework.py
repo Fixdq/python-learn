@@ -13,9 +13,9 @@ import time
 #
 # def decorator(func):
 #     def wrapper(*args, **kwargs):
-#         start_time = time.time()
+#         start_time = test_time.test_time()
 #         res = func(*args, **kwargs)
-#         end_time = time.time()
+#         end_time = test_time.test_time()
 #         print(end_time - start_time)
 #         return res
 #
@@ -24,13 +24,13 @@ import time
 
 # @decorator
 # def run():
-#     time.sleep(1)
+#     test_time.sleep(1)
 #     print('正在跑步')
 #
 #
 # @decorator
 # def runs(name):
-#     time.sleep(1)
+#     test_time.sleep(1)
 #     print('%s正在跑步' % name)
 #
 # run()
@@ -52,7 +52,7 @@ import time
 #         return wrapper
 # @decorator
 # def runs(name):
-#     time.sleep(1)
+#     test_time.sleep(1)
 #     print('%s正在跑步' % name)
 # runs('fixd')
 
@@ -95,14 +95,14 @@ import time
 
 
 # 	五：编写装饰器，为多个函数加上认证功能，要求登录成功一次，在超时时间内无需重复登录，超过了超时时间，则必须重新登录
-# import time
+# import test_time
 # path_file = r'db.txt'
 # current_user = {'name':'','login_time':''}
 # auto_loginout_time = 10
 # def decorator(func):
 #     def wrapper(*args,**kwargs):
 #         if current_user['name']:
-#             current_time = time.time()
+#             current_time = test_time.test_time()
 #             login_time = current_user['login_time']
 #             if current_time - login_time < auto_loginout_time:
 #                 print('在线中。。。')
@@ -118,7 +118,7 @@ import time
 #                     if uname == user['name'] and pwd == user['password']:
 #                         print('登录成功')
 #                         current_user['name'] = uname
-#                         current_user['login_time'] = time.time()
+#                         current_user['login_time'] = test_time.test_time()
 #                         r = func(*args, **kwargs)
 #                         return r
 #                 else:
@@ -126,7 +126,7 @@ import time
 #     return wrapper
 # @decorator
 # def index():
-#     time.sleep(2)
+#     test_time.sleep(2)
 #     print('index page')
 # @decorator
 # def manager():
@@ -256,8 +256,8 @@ import time
 
 # 	九 编写日志装饰器，实现功能如：一旦函数f1执行，则将消息2017-07-21 11:12:11 f1 run写入到日志文件中，日志文件路径可以指定
 # 	注意：时间格式的获取
-# 	import time
-# 	time.strftime('%Y-%m-%d %X')
+# 	import test_time
+# 	test_time.strftime('%Y-%m-%d %X')
 #
 #
 import os

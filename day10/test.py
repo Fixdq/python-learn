@@ -1,19 +1,19 @@
 # encoding: utf-8
 # by fixdq
 #
-# import time
+# import test_time
 # def timmer(func):
 #     def wrapper(*args,**kwargs):
-#         start_time=time.time()
+#         start_time=test_time.test_time()
 #         res=func(*args,**kwargs)
-#         stop_time=time.time()
-#         print('run time is %s' %(stop_time-start_time))
+#         stop_time=test_time.test_time()
+#         print('run test_time is %s' %(stop_time-start_time))
 #         return res
 #     return wrapper
 #
 # @timmer
 # def foo():
-#     time.sleep(1)
+#     test_time.sleep(1)
 #     print('from foo')
 # foo()
 

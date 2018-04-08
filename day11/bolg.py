@@ -1,15 +1,15 @@
 # encoding: utf-8
 # by fixdq
 #
-# import time
+# import test_time
 # # 计算每个函数执行的时间
 # def warpper(func):
 #     def inner(*args,**kwargs):
 #         # 函数开始的时间点
-#         start_time = time.time()
+#         start_time = test_time.test_time()
 #         res = func(*args,**kwargs)    # 原函数有返回值
 #         # 函数结束的时间点
-#         end_time = time.time()
+#         end_time = test_time.test_time()
 #         # 显示执行时间
 #         total = start_time - end_time  # 单位秒
 #         print(total)
@@ -19,7 +19,7 @@
 # # 语法糖
 # @warpper
 # def run(name):
-#     time.sleep(1)
+#     test_time.sleep(1)
 #     print('%s刚才在跑步' % name)
 #     return '跑步结束'
 #
@@ -35,29 +35,29 @@
 
 
 # def run():
-#         time.sleep(1)
+#         test_time.sleep(1)
 #         print('刚才在跑步')
 #
 # # 函数开始的时间点
-# start_time = time.time()
+# start_time = test_time.test_time()
 # # 调用
 # run()
 # # 函数结束的时间点
-# end_time = time.time()
+# end_time = test_time.test_time()
 # # 显示执行时间
 #  # 单位秒
 # print(end_time - start_time)
 
 
 # def run():
-#         time.sleep(1)
+#         test_time.sleep(1)
 #         print('刚才在跑步')
 #
 # def timer(func):
-#     start_time = time.time()
+#     start_time = test_time.test_time()
 #     func()
 #     # 函数结束的时间点
-#     end_time = time.time()
+#     end_time = test_time.test_time()
 #     # 显示执行时间
 #     total = end_time - end_time  # 单位秒
 #     print(end_time - start_time)

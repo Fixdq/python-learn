@@ -2,11 +2,11 @@
 # encoding: utf-8
 # by fixdq
 #
-# import time
+# import test_time
 #
 #
 # def running():
-#     time.sleep(5)
+#     test_time.sleep(5)
 #     print('跑了五秒钟')
 
 

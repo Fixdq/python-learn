@@ -87,14 +87,14 @@ def transfer(u_out,u_in,u_money):
 # 		提示：一旦用户锁定，则将用户名与当前时间写入文件,例如: egon:1522134383.29839
 # 			实现方式如下：
 #
-# 			import time
+# 			import test_time
 #
-# 			current_time=time.time()
+# 			current_time=test_time.test_time()
 # 			current_time=str(current_time) #当前的时间是浮点数，要存放于文件，需要转成字符串
 # 			lock_user='%s:%s\n' %('egon',current_time)
 #
 # 			然后打开文件
 # 			f.write(lock_user)
 #
-# 			以后再次执行用户验证功能，先判断用户输入的用户名是否是锁定的用户，如果是，再用当前时间time.time()减去锁定的用户名后
+# 			以后再次执行用户验证功能，先判断用户输入的用户名是否是锁定的用户，如果是，再用当前时间time.test_time()减去锁定的用户名后
 # 			的时间，如果得出的结果小于300秒，则直接终止函数，无法认证，否则就从文件中清除锁定的用户信息，并允许用户进行认证
