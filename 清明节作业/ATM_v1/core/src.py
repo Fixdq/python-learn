@@ -11,13 +11,16 @@ def login():
      登录函数，密码输错三次锁定，用户名输错可以一直输入
     :return: 
     """
+    if user_data['is_auth']:
+        print('您已登录！')
+        return
     print('登录')
     count = 0
     while True:
         name = input('请输入用户名>>：').strip()
         if 'q' == name: break
         user_dic = user.get_userinfo_interface(name)
-        if count > 3:
+        if count == 3:
             # 锁定用户
             user.lock_user(name)
             print('您尝试次数太多了，被锁定')
