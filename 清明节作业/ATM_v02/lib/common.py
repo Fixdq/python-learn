@@ -15,7 +15,7 @@ def login_auth(func):
     """
 
     def wrapper(*args, **kwargs):
-        if src.cur_user:
+        if src.cur_user is None:
             print('对不起，您还没有登录!')
             src.login()
         else:

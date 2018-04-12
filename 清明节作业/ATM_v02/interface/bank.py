@@ -19,19 +19,15 @@ def transfer_interface(from_name, to_name, account):
     """
     from_user_dic = user.get_userinfo_interface(from_name)
     to_user_dic = user.get_userinfo_interface(to_name)
-    if from_user_dic['account'] >= account:  # 判断用户余额
-        from_user_dic['account'] -= account
-        to_user_dic['account'] += account
-        from_user_dic['bankflow'].extend(['%s transfer %s yuan to %s' %
-                                          (from_name, account, to_name)])
-        to_user_dic['bankflow'].extend(['%s accept %s yuan to %s' %
-                                        (to_name, account, from_name)])
-        db_handler.update(from_user_dic)
-        db_handler.update(to_user_dic)
-        logger.info('%s 向 %s 转账 %s' % (from_name, to_name, account))
-        return True
-    else:
-        False
+    from_user_dic['account'] -= account
+    to_user_dic['account'] += account
+    from_user_dic['bankflow'].append('%s transfer %s yuan to %s' %
+                                      (from_name, account, to_name))
+    to_user_dic['bankflow'].append('%s accept %s yuan to %s' %
+                                    (to_name, account, from_name))
+    db_handler.update(from_user_dic)
+    db_handler.update(to_user_dic)
+    logger.info('%s 向 %s 转账 %s' % (from_name, to_name, account))
 
 
 def repay_interface(name, account):
@@ -44,7 +40,7 @@ def repay_interface(name, account):
     user_dic = user.get_userinfo_interface(name)
     user_dic['account'] += account
     # 记录流水
-    user_dic['bankflow'].extend['%s 还款 %s' % (name, account)]
+    user_dic['bankflow'].append('%s 还款 %s' % (name, account))
     db_handler.update(user_dic)
     logger.info('%s 还款 %s' % (name, account))
 

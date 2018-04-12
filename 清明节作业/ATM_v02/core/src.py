@@ -69,11 +69,35 @@ def check_balance():
 
 @common.login_auth
 def transfer():
-    pass
-
+    while True:
+        to_user = input('请输入您要转账人的名字：').strip()
+        if not user.get_userinfo_interface(to_user):
+            print('转账人不存在！')
+            continue
+        account = input('请输入您的转账金额：').strip()
+        if not account.isdigit():
+            print('请输入正确的转账金额！')
+            continue
+        balance = user.get_userinfo_interface(cur_user['name'])['account']
+        account = int(account)
+        if balance < account:
+            print('您的账户余额不足！')
+            continue
+        bank.transfer_interface(to_user,cur_user['name'],account)
+        print('转账成功')
+        break
 @common.login_auth
 def repay():
-    pass
+    while True:
+        account = input('请输入您的还款金额：').strip()
+        if not account.isdigit():
+            print('请输入正确的还款金额')
+            continue
+        account = int(account)
+        bank.repay_interface(cur_user['name'],account)
+        print('还款成功！')
+        break
+
 
 @common.login_auth
 def withdraw():
@@ -87,7 +111,9 @@ def withdraw():
             continue
 @common.login_auth
 def check_records():
-    pass
+    user_records = bank.check_record(cur_user['name'])
+    for record in user_records:
+        print(record)
 
 @common.login_auth
 def shopping():

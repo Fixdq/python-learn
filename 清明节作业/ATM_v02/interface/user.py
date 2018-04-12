@@ -17,7 +17,7 @@ def register_interface(name, pwd, credit=15000):
         'credit': credit,
         'locked': False,
         'shop_car': {},
-        'ban': [],
+        'bankflow': [],
     }
 
     db_handler.update(user_dic)
