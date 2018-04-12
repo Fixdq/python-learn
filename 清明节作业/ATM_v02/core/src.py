@@ -3,6 +3,7 @@
 # by fixdq
 
 from interface import user
+from interface import bank
 from lib import common
 
 cur_user = {
@@ -17,6 +18,7 @@ def register():
         return
     while True:
         name = input('input you name').strip()
+        if name == 'q':break
         user_dic = user.get_userinfo_interface(name)
         if user_dic:
             print('用户名已存在！')
@@ -39,6 +41,7 @@ def login():
     count = 0
     while True:
         name = input('input you name').strip()
+        if 'q' == name:break
         pwd = input('input you password').strip()
         user_dic = user.get_userinfo_interface(name)
 
@@ -61,7 +64,8 @@ def login():
 
 @common.login_auth
 def check_balance():
-    pass
+    user_balance = bank.get_balance_interface(cur_user['name'])
+    print('您的余额为：%s' % user_balance)
 
 @common.login_auth
 def transfer():
@@ -73,8 +77,14 @@ def repay():
 
 @common.login_auth
 def withdraw():
-    pass
-
+    while True:
+        account = input('请输入取款金额：').strip()
+        if bank.withdraw_interface(cur_user['name'],account):
+            print('取款成功！')
+            break
+        else:
+            print('您的余额不足')
+            continue
 @common.login_auth
 def check_records():
     pass
@@ -105,8 +115,15 @@ menu = {
 def run():
     while True:
         print('''
-            1 login
-            2 register
+                '1': login,
+                '2': register,
+                '3': check_balance,
+                '4': transfer,
+                '5': repay,
+                '6': withdraw,
+                '7': check_records,
+                '8': shopping,
+                '9': check_shopping_cart
         ''')
         ch = input('input you choice').strip()
         if ch in menu:

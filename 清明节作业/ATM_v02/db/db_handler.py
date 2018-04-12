@@ -12,10 +12,10 @@ def select(name):
     if not os.path.exists(path):
         return False
     with open(path, encoding='utf-8') as f:
-        return json.load(name)
+        return json.load(f)
 
 
 def update(user_dic):
     path = os.path.join(setting.BASE_DB, "%s.json" % (user_dic['name']))
     with open(path, 'w', encoding='utf-8') as f:
-        json.load(f)
+        json.dump(user_dic, f)
