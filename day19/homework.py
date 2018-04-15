@@ -143,6 +143,14 @@ class Class:
     班级类
     """
 
+    def show_classes(self):
+        """
+        查看本班所有的课程
+        :return: 
+        """
+        for item in self.classes:
+            print(item)
+
     def __init__(self, class_name=None, par_school=None, classes=None, teachers=None):
         """
         
@@ -156,21 +164,14 @@ class Class:
         self.classes = classes
         self.teachers = teachers
 
-    def show_classes(self):
-        """
-        查看本班所有的课程
-        :return: 
-        """
-        for item in self.classes:
-            print(item)
-
-    def show_teacher(self):
+    def show_teacher(self ):
         """
         查看本班的任课老师姓名
         :return: 
         """
         for teacher in self.teachers:
             print(teacher)
+
 
 
 # 实例化班级对象
