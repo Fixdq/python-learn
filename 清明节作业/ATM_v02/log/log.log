@@ -1,0 +1,8 @@
+[2018-04-12 00:05:12,769][MainThread:140552229504768][task_id:Bank][bank.py:107][INFO][None查看了银行流水]
+[2018-04-12 22:58:54,004][MainThread:139714605291264][task_id:Bank][bank.py:30][INFO][z 向 a 转账 22]
+[2018-04-12 23:00:02,552][MainThread:140562917402368][task_id:Bank][bank.py:45][INFO][a 还款 234]
+[2018-04-12 23:00:04,753][MainThread:140562917402368][task_id:Bank][bank.py:45][INFO][a 还款 3]
+[2018-04-12 23:00:10,339][MainThread:140562917402368][task_id:Bank][bank.py:45][INFO][a 还款 3]
+[2018-04-12 23:00:42,102][MainThread:140023197611776][task_id:Bank][bank.py:30][INFO][z 向 a 转账 123]
+[2018-04-12 23:00:45,774][MainThread:140023197611776][task_id:Bank][bank.py:45][INFO][a 还款 13452345]
+[2018-04-12 23:00:51,174][MainThread:140023197611776][task_id:Bank][bank.py:103][INFO][a查看了银行流水]

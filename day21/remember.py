@@ -21,8 +21,8 @@ class Teacher(People):
         print('%s is changing score' % self.name)
 
     def show_course_info(self):
-        for sourse in self.courses:
-            sourse.show_info()
+        for course in self.courses:
+            course.show_info()
 
 
 class Student(People):
