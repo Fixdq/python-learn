@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # @Author  : Fixdq
-# @File    : server.py
+# @File    : server_mult.py
 # @Software: PyCharm
 import socket
 # ip,端口
