@@ -8,7 +8,7 @@ import os
 from socket import socket
 
 s = socket()
-s.connect_ex(('127.0.0.1', 8878))
+s.connect_ex(('127.0.0.1', 8888))
 
 
 while True:
