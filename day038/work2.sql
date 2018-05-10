@@ -73,3 +73,6 @@ insert into scoure
       (2,2,60),
       (3,3,60)
 ;
+
+
+
