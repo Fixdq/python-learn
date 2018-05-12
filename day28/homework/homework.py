@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # @Author  : Fixdq
-# @File    : homework.py
+# @File    : homework.sql.py
 # @Software: PyCharm
 
 # 4月24日作业

@@ -41,7 +41,7 @@ data_dic['行数'] = count_list
 
 
 
-writer = pd.ExcelWriter('/home/fixd/workspace/python_learn/day39/行数.xlsx')
+writer = pd.ExcelWriter('/home/fixd/workspace/python_learn/day40/行数.xlsx')
 df = pd.DataFrame(data_dic,columns=['姓名','行数'],index=list)
 df.to_excel(writer,'sheet1')
 writer.save()

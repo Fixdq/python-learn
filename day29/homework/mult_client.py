@@ -31,7 +31,7 @@ def upload(conn):
 
 def download(conn):
     common.send(conn, 'down')
-    common.recv_file(conn, '/home/fixd/project/python_learn/day29/homework')
+    common.recv_file(conn, '/home/fixd/project/python_learn/day29/homework.sql')
     print('down is ok')
 
 

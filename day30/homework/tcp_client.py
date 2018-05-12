@@ -29,7 +29,7 @@ def upload(conn):
 def download(conn):
     common.send(conn, 'down')
     # 下载保存的路径
-    common.recv_file(conn, '/home/fixd/project/python_learn/day30/homework')
+    common.recv_file(conn, '/home/fixd/project/python_learn/day30/homework.sql')
     print('down is ok')
 
 
