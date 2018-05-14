@@ -91,7 +91,7 @@ def get_movie_list(client):
         back_dic = common.send_data(client, send_dic, None)
         if back_dic['flag']:
             for i, mo in enumerate(back_dic['movie_list']):
-                print('%s : %s-->%s' % (i, mo[0],mo[1]))
+                print('%s : %s-->%s' % (i, mo[0], mo[1]))
             break
         else:
             print(back_dic['msg'])
@@ -193,7 +193,17 @@ def check_notice(client):
         print(back_dic['msg'])
 
 
-fun_dic = {
+menu = """
+1 注册
+2 登录
+3 冲会员
+4 查看视频
+5 下载免费视频
+6 下载收费视频
+7 查看观影记录
+8 查看公告
+"""
+menu_dic = {
     '1': user_register,
     '2': user_login,
     '3': buy_member,
@@ -208,19 +218,10 @@ fun_dic = {
 def user_view():
     client = tcpClient.client_conn('127.0.0.1', 8081)
     while True:
-        print('''
-        1 注册
-        2 登录
-        3 冲会员
-        4 查看视频
-        5 下载免费视频
-        6 下载收费视频
-        7 查看观影记录
-        8 查看公告
-        ''')
+        print(menu)
 
         choose = input('please choose>>:').strip()
         if 'q' == choose: break
-        if choose not in fun_dic: continue
-        fun_dic[choose](client)
+        if choose not in menu_dic: continue
+        menu_dic[choose](client)
     client.close()

@@ -70,9 +70,13 @@ def upload_movie(client):
                 is_free = 1
             movie_path = os.path.join(setting.BASE_MOVIE_UP, up_list[choose])
             fsize = os.path.getsize(movie_path)
-            send_dic = {'type': 'upload', 'user_type': 'admin', 'name': admin_data['name'],
+            send_dic = {'type': 'upload',
+                        'user_type': 'admin',
+                        'name': admin_data['name'],
                         'session': admin_data['session'],
-                        'file_name': up_list[choose], 'file_size': fsize, 'is_free': is_free}
+                        'file_name': up_list[choose],
+                        'file_size': fsize,
+                        'is_free': is_free}
             back_dic = common.send_data(client, send_dic, movie_path)
             if back_dic['flag']:
                 print(back_dic['msg'])
