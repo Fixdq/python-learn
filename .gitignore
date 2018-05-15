@@ -1,4 +1,11 @@
 /build
 /.idea
 /.gradle
-
+/weekday0512/客户端/download_movie/
+/weekday0512/客户端/upload_movie/
+/weekday0512/服务端/db/movie/
+/weekday0512/服务端/movie_list/
+/*.pyc
+/*/*/__pycache__/*
+/*/__pycache__/*
+/__pycache__/*
