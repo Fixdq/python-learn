@@ -56,7 +56,6 @@ class ModelMetaClass(type):
 
         return type.__new__(cls, name, bases, attrs)
 
-
 class Model(dict,metaclass=ModelMetaClass):
 
     def __getattr__(self, item):
@@ -96,6 +95,9 @@ class Model(dict,metaclass=ModelMetaClass):
             return cls(**res[0])
         else:
             return None
+    def update(self):
+        ms = MySql.singleton()
+
 
 
 
@@ -108,7 +110,10 @@ class User(Model):
 
 
 if __name__ == '__main__':
-    user = User()
+    user = User(name='22',password=123)
+    u.name
+    m=Movie(path='oo')
+    m.path
     # res = user.select_all(id=1,)
     res = user.select_one()
     print(res)
