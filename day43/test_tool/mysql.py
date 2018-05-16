@@ -4,23 +4,14 @@
 # @File    : mysql.py
 # @Software: PyCharm
 
-import pymysql
-from day43.test1.setting import *
+
+from day43.test_tool.db_utlis import *
 
 
 class MySql:
-    __instance = None
 
     def __init__(self):
-        self.conn = pymysql.connect(
-            host=host,
-            port=port,
-            user=user,
-            password=password,
-            database=database,
-            charset=charset,
-            autocommit=autocommit
-        )
+        self.conn = POOL.connection()
         self.cursor = self.conn.cursor(pymysql.cursors.DictCursor)
 
     def select(self, sql, args=None):
@@ -42,9 +33,3 @@ class MySql:
     def close(self):
         self.cursor.close()
         self.conn.close()
-
-    @classmethod
-    def singleton(cls):
-        if not cls.__instance:
-            cls.__instance = cls()
-        return cls.__instance

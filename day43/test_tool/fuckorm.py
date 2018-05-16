@@ -69,7 +69,7 @@ class Model(dict, metaclass=ModelMetaClass):
 
     @classmethod
     def select_all(cls, **kwargs):
-        ms = MySql.singleton()
+        ms = MySql()
         if kwargs:
             key = list(kwargs.keys())[0]
             value = kwargs[0]
@@ -86,7 +86,7 @@ class Model(dict, metaclass=ModelMetaClass):
 
     @classmethod
     def select_one(cls, **kwargs):
-        ms = MySql.singleton()
+        ms = MySql()
         key = list(kwargs.keys())[0]
         value = kwargs[key]
         sql = "select * from %s WHERE %s = ?" % (cls.table_name, key)
@@ -99,7 +99,7 @@ class Model(dict, metaclass=ModelMetaClass):
             return cls(**res[0])
 
     def update(self):
-        ms = MySql.singleton()
+        ms = MySql()
         table_name = self.table_name
         mapping = self.mapping
         pk = self.primary_key
@@ -120,7 +120,7 @@ class Model(dict, metaclass=ModelMetaClass):
         ms.execute(sql, colum_values)
 
     def save(self):
-        ms = MySql.singleton()
+        ms = MySql()
         table_name = self.table_name
         mapping = self.mapping
 
@@ -150,10 +150,10 @@ if __name__ == '__main__':
     user = User()
     u = user.select_one(id=1)
     print(u)
-    u.name = 'ssssssssssssss'
+    u.name = 'dd'
     u.balance='200'
     u.update()
 
-    u1 = User(name = 'dddddddddd',balance = 2000)
+    u1 = User(name = 'ff',balance = 2000)
     u1.save()
 

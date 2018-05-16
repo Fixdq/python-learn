@@ -24,5 +24,6 @@ POOL = PooledDB(
     user='fixd',
     password='123',
     database='db41',
-    charset='utf8'
+    charset='utf8',
+    autocommit = True
 )
