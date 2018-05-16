@@ -55,6 +55,9 @@ class ModelMetaClass(type):
 
 class Model(dict, metaclass=ModelMetaClass):
 
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
     def __getattr__(self, item):
         return self[item]
 
@@ -118,6 +121,6 @@ class Model(dict, metaclass=ModelMetaClass):
                 colum_space.append('?')
                 colum_value.append(getattr(self, v.name, None))
 
-        sql = "insert into %s(%s) values (%s)" % (table_name,','.join(colum_key),','.join(colum_space))
-        sql = sql.replace('?','%s')
+        sql = "insert into %s(%s) values (%s)" % (table_name, ','.join(colum_key), ','.join(colum_space))
+        sql = sql.replace('?', '%s')
         ms.execute(sql, colum_value)

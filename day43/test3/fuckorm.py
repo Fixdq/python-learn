@@ -54,6 +54,9 @@ class ModelMetaClass(type):
 
 class Model(dict, metaclass=ModelMetaClass):
 
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
     def __getattr__(self, item):
         try:
             return self[item]
