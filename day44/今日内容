@@ -1,0 +1,36 @@
+
+1 仿优酷架构
+
+2 数据库设计
+        1 注册
+        2 登录
+        3 上传视频
+        4 删除视频
+        5 发布公告
+        1 注册
+        2 登录
+        3 冲会员
+        4 查看视频
+        5 下载免费视频
+        6 下载收费视频
+        7 查看观影记录
+        8 查看公告
+
+
+userinfo--->id , name ,password , is_vip , user_type, locked
+movie---->id,name,is_free, is_delete, path,user_id,upload_time,md5
+notice--->id,name,content,create_time,user_id
+download_record---->id,user_id,movie_id
+
+
+
+3 搭建框架
+客户端：管理员视图----》登录，注册，上传视频
+        用户视图---》登录注册，购买会员
+
+
+
+
+
+
+4 登录，注册功能
