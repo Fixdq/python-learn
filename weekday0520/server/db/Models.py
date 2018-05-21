@@ -5,7 +5,7 @@
 # @File    : Models.py
 # @Software: PyCharm
 
-from server.orm01.fixdqorm import Model, StringField, IntergerField
+from orm01.fixdqorm import Model, StringField, IntergerField
 
 
 class User(Model):
@@ -37,3 +37,9 @@ class Notice(Model):
     content = StringField('content')
     create_time = StringField('create_time')
     user_id = IntergerField('user_id')
+
+class Record(Model):
+    table_name = 'download_record'
+    id = IntergerField('id', primary_key=True)
+    user_id = IntergerField('user_id')
+    movie_id = IntergerField('movie_id')

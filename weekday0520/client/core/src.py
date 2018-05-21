@@ -5,7 +5,7 @@
 # @File    : src.py
 # @Software: PyCharm
 
-from client.core import admin,user
+from core import admin,user
 menu ="""
 1.用户
 2.管理员

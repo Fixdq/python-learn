@@ -6,7 +6,7 @@
 # @Software: PyCharm
 
 import socket
-from client.conf import setting
+from conf import setting
 
 
 def get_conn():

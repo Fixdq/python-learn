@@ -5,9 +5,9 @@
 # @File    : setting.py
 # @Software: PyCharm
 
-from server.db.Models import User
-from server.lib import common
-from server.tcpserver import userdata
+from db.Models import User
+from lib import common
+from tcpserver import userdata
 
 
 def register(conn, data):
@@ -31,6 +31,10 @@ def login(conn, data):
         back_data = {'flag': False, 'msg': '用户不存在'}
         common.send(conn, back_data)
         return
+    if user.user_type != data['user_type']:
+        back_data = {'flag': False, 'msg': '用户类型错误'}
+        common.send(conn, back_data)
+        return
 
     if common.get_md5(data['pwd']) != user.password:
         back_data = {'flag': False, 'msg': '密码不正确'}
@@ -43,6 +47,7 @@ def login(conn, data):
     userdata.mutex.acquire()
     userdata.userdata[data['addr']] = [session, user.id]
     userdata.mutex.release()
-
     back_data = {'flag': True, 'msg': '登录成功', 'session': session}
+    if data['user_type'] == 'user':
+        back_data['is_vip'] = user.is_vip
     common.send(conn, back_data)

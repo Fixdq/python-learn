@@ -9,8 +9,8 @@ import json
 import struct
 import time
 
-from server.conf import setting
-from server.tcpserver import userdata
+from conf import setting
+from tcpserver import userdata
 
 def login_auth(func):
     def wrapper(*args,**kwargs):

@@ -8,22 +8,31 @@ import json
 import socket
 import struct
 
-from server.conf import setting
-from server.tcpserver import userdata
+from conf import setting
+from tcpserver import userdata
 from concurrent.futures import ThreadPoolExecutor
 from threading import Lock
-from server.lib import common
-from server.interface import admin_interface,common_interface,user_interface
+from lib import common
+from interface import admin_interface, common_interface, user_interface
+
 pool = ThreadPoolExecutor(10)
 mutex = Lock()
 userdata.mutex = mutex
 menu_dic = {
-    'register':common_interface.register,
-    'login':common_interface.login,
-    'check_movie':admin_interface.check_movie,
-    'upload':admin_interface.upload,
-    'get_movie_all':admin_interface.get_movie_all,
-    'delete_movie':admin_interface.delete_movie_by_id,
+    'register': common_interface.register,
+    'login': common_interface.login,
+    'check_movie': admin_interface.check_movie,
+    'upload': admin_interface.upload,
+    'notice': admin_interface.notice,
+
+    'get_movie_all': admin_interface.get_movie_all,
+    'delete_movie': admin_interface.delete_movie_by_id,
+    'pay_vip': user_interface.pay_vip,
+    'download_movie': user_interface.download_movie,
+    'get_movies': user_interface.get_movies,
+    'get_notices': user_interface.get_notices,
+    'get_records': user_interface.get_records,
+
 }
 
 
@@ -35,8 +44,8 @@ def dispatch(conn, data):
             'msg': '请求不存在'
         }
         common.send(conn, back_data)
-
-    menu_dic[type](conn, data)
+    else:
+        menu_dic[type](conn, data)
 
 
 def work(conn, addr):
@@ -48,13 +57,14 @@ def work(conn, addr):
             data = json.loads(head_bytes.decode(setting.charset))
             data['addr'] = addr
             dispatch(conn, data)
-        except Exception:
+        except Exception as e:
+            print(e)
             conn.close()
             userdata.mutex.acquire()
             if userdata.userdata.get(addr):
                 userdata.userdata.pop(addr)
             userdata.mutex.release()
-
+            break
 
 def run():
     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

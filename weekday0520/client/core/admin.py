@@ -6,9 +6,9 @@
 # @Software: PyCharm
 import os
 
-from client.tcpclient import client
-from client.lib import common
-from client.conf import setting
+from tcpclient import client
+from lib import common
+from conf import setting
 
 cookie = {
     'session': None
@@ -46,6 +46,7 @@ def login(conn):
             'type': 'login',
             'name': name,
             'pwd': pwd,
+            'user_type': 'admin'
         }
         res = common.send_back(conn, send_data)
 
@@ -60,13 +61,13 @@ def login(conn):
 @common.outter('admin')
 def upload(conn):
     while True:
-        movies = common.get_movie_all()
+        movies = common.get_file_all()
         if not movies:
             print('没有可上传的视频')
             break
 
         for i, movie in enumerate(movies):
-            print(i, movies)
+            print(i, movie)
 
         ch = input('请选择要上传的视频').strip()
         if ch == 'q': break
@@ -75,8 +76,8 @@ def upload(conn):
         if ch < 0 or ch >= len(movies): continue
 
         # 获取文件信息
+        file_name = movies[ch]
         file_path = os.path.join(setting.BASE_DIR_MOVIE, file_name)
-        file_name = movies(ch)
         file_size = common.get_filesize(file_path)
         file_md5 = common.get_file_md5(file_path)
 
@@ -117,7 +118,7 @@ def upload(conn):
 def remove(conn):
     while True:
         send_data = {'type': 'get_movie_all',
-                     'session': cookie,
+                     'session': cookie['session'],
                      }
         res = common.send_back(conn, send_data)
         if not res['flag']:
@@ -150,7 +151,8 @@ def notice(conn):
     while True:
         title = input('请输入标题：').strip()
         content = input('请输入内容：').strip()
-        send_data = {'session': cookie['session'],
+        send_data = {'type':'notice',
+                    'session': cookie['session'],
                      'title': title,
                      'content': content}
         res = common.send_back(conn, send_data)
@@ -164,9 +166,9 @@ def notice(conn):
 menu = """
 1.注册
 2.登录
-2.上传视频
-2.删除视频
-2.发布公告
+3.上传视频
+4.删除视频
+5.发布公告
 """
 
 menu_dic = {

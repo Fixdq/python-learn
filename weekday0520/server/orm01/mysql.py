@@ -6,7 +6,7 @@
 # @File    : mysql.py
 # @Software: PyCharm
 
-from server.orm01.mysql_pool import POOL
+from orm01.mysql_pool import POOL
 import pymysql
 
 

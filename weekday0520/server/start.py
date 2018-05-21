@@ -9,7 +9,7 @@ import os
 import sys
 BASE_DIR = os.path.dirname(__file__)
 sys.path.append(BASE_DIR)
-from server.tcpserver import server
+from tcpserver import server
 
 if __name__ == '__main__':
     server.run()

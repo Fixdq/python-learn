@@ -4,11 +4,12 @@
 # @Author  : fixdq
 # @File    : setting.py
 # @Software: PyCharm
+import os
 
-from server.db.Models import Notice
-from server.db.Models import Movie
-from server.lib import common
-from server.conf import setting
+from db.Models import Notice
+from db.Models import Movie
+from lib import common
+from conf import setting
 
 
 @common.login_auth
@@ -30,11 +31,13 @@ def upload(conn, data):
     file_md5 = data['file_md5']
     user_id = data['user_id']
 
-    upload_path = setting.BASE_DIR_MOVIES
+    upload_path = os.path.join(setting.BASE_DIR_MOVIES,file_name)
     recv_size = 0
-    while recv_size < file_size:
-        conn.recv(8192)
-        recv_size += 8192
+    with open(upload_path,'wb')as f:
+        while recv_size < file_size:
+            re = conn.recv(1024)
+            f.write(re)
+            recv_size += len(re)
 
     movie = Movie()
     movie.path = upload_path
@@ -62,7 +65,7 @@ def check_movie(conn, data):
 
 
 @common.login_auth
-def get_movie_all(conn, data):
+def get_movie_all(conn,data):
     movies = Movie.select_many(is_delete=0)
     if movies:
         movie_list = [[movie.id, movie.name] for movie in movies]
@@ -82,3 +85,4 @@ def delete_movie_by_id(conn, data):
     movie.update()
     back_data = {'flag': True, 'msg': '没有视频可以删除'}
     common.send(conn, back_data)
+

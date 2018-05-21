@@ -6,7 +6,7 @@
 # @File    : fixdqorm.py
 # @Software: PyCharm
 
-from server.orm01.mysql import MySql
+from orm01.mysql import MySql
 
 
 class Field:
