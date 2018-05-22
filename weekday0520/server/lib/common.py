@@ -28,6 +28,7 @@ def login_auth(func):
         send(args[0],back_dic)
     return wrapper
 
+
 def send(conn, dic, file=None):
     send_bytes = json.dumps(dic).encode(setting.charset)
     conn.send(struct.pack('i', len(send_bytes)))
