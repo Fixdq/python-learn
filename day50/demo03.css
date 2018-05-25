@@ -1,0 +1,57 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}
+
+body {
+    background-color: aliceblue;
+}
+body p{
+    margin: 10px 0px 5px 0px;
+}
+#container {
+    margin: 50px;
+    padding: 20px;
+    background-color: antiquewhite;
+    box-shadow: 10px 10px 10px #888888;
+
+}
+
+.sub {
+    padding: 1px 4px 1px 4px;
+    font-size: 16px;
+    color: black;
+    background-color: beige;
+    border-radius: 5px;
+
+}
+
+.t1 {
+    color: red;
+}
+
+.t2 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.ti {
+    text-align: center;
+    font-weight: bold;
+    font-size: 26px;
+    font-family: "Andale Mono", "Lucida Console", Monaco, "Courier New", Courier, monospace;
+}
+
+.img {
+    position: absolute;
+    width: 300px;
+    margin-top: 150px;
+    margin-left: 550px;
+    transform: rotate(0deg);
+    animation: mymove 7s linear infinite;
+}
+img{
+     width: 120px;
+}
+
+@keyframes mymove {
+    from{transform: rotate(0deg)}
+    to{transform: rotate(360deg)}
+}

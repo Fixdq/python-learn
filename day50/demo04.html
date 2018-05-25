@@ -4,13 +4,81 @@
     <meta charset="UTF-8">
     <title>From表单</title>
     <base href="_self">
-    <link rel="stylesheet" href="demo03.css">
+    <style>
+        body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}
+
+body {
+    background-color: aliceblue;
+}
+body p{
+    margin: 10px 0px 5px 0px;
+}
+.container {
+    margin: 50px;
+    padding: 20px;
+    background-color: antiquewhite;
+    box-shadow: 10px 10px 10px #888888;
+
+}
+
+.sub {
+    padding: 1px 4px 1px 4px;
+    font-size: 16px;
+    color: black;
+    background-color: beige;
+    border-radius: 5px;
+
+}
+
+.t1 {
+    color: red;
+}
+
+.t2 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.ti {
+    text-align: center;
+    font-weight: bold;
+    font-size: 26px;
+    font-family: "Andale Mono", "Lucida Console", Monaco, "Courier New", Courier, monospace;
+}
+
+.img1 {
+    position: absolute;
+    width: 300px;
+    /*margin-top: 150px;*/
+    margin-left: 100px;
+    transform: rotate(0deg);
+    animation: mymove 6s linear infinite;
+}
+.img2 {
+    position: absolute;
+    width: 300px;
+    /*margin-top: 150px;*/
+    margin-left: 100px;
+    transform: rotate(180deg);
+    animation: mymove2 6s linear infinite;
+}
+img{
+     width: 130px;
+}
+@keyframes mymove {
+    from{transform: rotate(0deg)}
+    to{transform: rotate(360deg)}
+}
+@keyframes mymove2 {
+    from{transform: rotate(180deg)}
+    to{transform: rotate(540deg)}
+}
+
+    </style>
 </head>
 <body>
-<div id="container">
-    <div class="img" >
-    <img src="//wx3.sinaimg.cn/mw690/6bbb2e73ly1fq9uao8cwfj21jk2bcnpd.jpg" alt="">
-    </div>
+<div class="container">
+
     <div class="ti">
         <p >这是一个表单</p>
     </div>
@@ -41,8 +109,12 @@
         <p><input class="sub" type="reset" value="重新填写"></p>
 
     </form>
-
-
+ <div class="img1" >
+    <img src="//wx3.sinaimg.cn/mw690/6bbb2e73ly1fq9uao8cwfj21jk2bcnpd.jpg" alt="">
+    </div>
+ <div class="img2" >
+    <img src="//wx3.sinaimg.cn/mw690/6bbb2e73ly1fq9uao8cwfj21jk2bcnpd.jpg" alt="">
+    </div>
 </div>
 
 
