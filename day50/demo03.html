@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>From表单</title>
+    <base href="_self">
+    <style>
+        body {
+            background-color: aliceblue;
+        }
+        #container {
+            margin: 50px;
+            padding: 20px;
+            background-color: antiquewhite;
+            box-shadow: 10px 10px 10px #888888;
+        }
+        .sub {
+            font-size: 16px;
+            color: darkslategrey;
+            border-radius: 5px;
+
+        }
+        .t1 {
+            color: red;
+        }
+        .t2 {
+            font-size:16px;
+            font-weight: bold;
+        }
+        .ti{
+            text-align: center;
+            font-weight: bold;
+            font-size: 26px;
+            font-family: "Andale Mono", "Lucida Console", Monaco, "Courier New", Courier, monospace;
+        }
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <div class="ti">
+        <p >这是一个表单</p>
+    </div>
+    <form action="">
+        <p class="t2">
+            用户名：<input class="t1" type="text" name="user" placeholder="输入用户名">
+        </p>
+        <p class="t2">
+            密　码：<input class="t1" type="password" name="password" placeholder="输入密码">
+        </p>
+        <p class="t2">
+            性别：
+            <input id="gender1" type="radio" name="gender" value="male" checked="checked"><label for="gender1">男</label>
+            <input id="gender2" type="radio" name="gender" value="female"><label for="gender2">女</label>
+        </p>
+        <p class="t2">
+            爱好：
+            <input class="t1" id="h1" type="checkbox" name="hobby1" checked><label for="h1">篮球</label>
+            <input class="t1" id="h2" type="checkbox" name="hobby2"><label for="h2">足球</label>
+            <input class="t1" id="h3" type="checkbox" name="hobby3"><label for="h3">网球</label>
+            <input class="t1" id="h4" type="checkbox" name="hobby4"><label for="h4">橄榄球</label>
+        </p>
+        <p>
+            <textarea name="content" id="" cols="50" rows="10" placeholder="请在这里输入" style="resize: none"></textarea>
+
+        </p>
+        <p><input class="sub" type="submit" value="确定"></p>
+        <p><input class="sub" type="reset" value="重新填写"></p>
+
+    </form>
+</div>
+
+
+</body>
+</html>
