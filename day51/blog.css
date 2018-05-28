@@ -42,7 +42,7 @@ ul {
     overflow: hidden;
     border: 2px solid white;
     border-radius: 50%;
-    margin: 10px auto 5px;
+    margin: 25px auto 5px;
 }
 .head_img>img {
     max-width: 100%;
@@ -52,8 +52,10 @@ ul {
 .head_desc{
     color: white;
     text-align: center;
+    font-size: 24px;
     padding: 2px 0px;
 }
+.head_desc { font-size: 14px}
 
 .head_me li,
 .head_tag li {
@@ -64,14 +66,14 @@ ul {
 .head_me a,
 .head_tag a {
     color: darkgrey;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 
 .head_me a:hover,
 .head_tag a:hover {
     color: white;
-    font-size: 14px;
+    font-size: 20px;
 }
 .head_tag a:before {
     content: "#";
@@ -94,9 +96,11 @@ ul {
 
 .cont_head {
     position: relative;
+    border-left: 3px solid red;
 }
 .cont_head .title{
-    font: 24px bold black;
+    font: bold 24px   black;
+    /*font-weight: bold;*/
 
 }
 
@@ -105,6 +109,10 @@ ul {
     right: 0px;
     bottom: 0px;
 }
+.art_list {
+    width: 80%;
+}
+
 .cont_item .cont_head,.cont_body,.cont_tag{
     padding: 5px;
 }

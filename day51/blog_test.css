@@ -1,0 +1,127 @@
+/*
+blog_test.html的css文件
+
+*/
+
+/*通用*/
+body {
+    margin: 0px;
+    font-size: 14px;
+}
+a {
+    text-decoration: none;
+}
+p {
+    margin: 0px;
+}
+ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.clearfix {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.head_me,
+.head_tag{
+    text-align: center;
+    font-size: 20px;
+    color: darkgrey;
+}
+.head_me a:hover,
+.head_tag a:hover{
+    font-size: 21px;
+    color: white;
+}
+
+.head_me {
+    margin: 15px 0px;
+}
+.head_tag {
+    margin: 15px 0px;
+}
+
+
+
+
+/*左边*/
+
+.left {
+    width: 20%;
+    height: 100%;
+    background-color: #1e1c29;
+    color: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+.div_img {
+    width: 120px;
+    height: 120px;
+    border: 2px solid white;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 15px auto;
+}
+.div_img>img{
+    max-width: 100%;
+}
+.head_title {
+    text-align: center;
+    font-size: 18px;
+}
+.head_desc {
+    text-align: center;
+    font-size: 18px;
+}
+
+/*右边*/
+
+.right {
+    width: 80%;
+    height: 100%;
+    background-color: #eeeeee;
+    float: right;
+}
+.article_list {
+    width: 80%;
+    margin: 10px 0px 10px 10px;
+}
+.article_item {
+    background-color: white;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
+}
+.article_item *{
+    padding: 5px;
+    margin-bottom: 10px;
+
+}
+.item {
+    padding: 10px;
+    position: relative;
+}
+.item .item_title{
+    left: 0px;
+    bottom: 0px;
+    padding: 0px;
+    font: bold 24px black;
+}
+.item .item_date{
+    /*float: right;*/
+    position: absolute;
+    padding: 0px;
+    right: 10px;
+    bottom: 0px;
+
+}
+.cont p{
+
+}
+
+.tags span:before{
+    content: "#";
+}
