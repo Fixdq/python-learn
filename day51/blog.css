@@ -1,0 +1,125 @@
+/*
+这是blog 的样式
+*/
+
+/*通用标签*/
+body {
+    margin: 0px;
+    font-size: 14px;
+}
+
+/*去掉超链接下边的横线*/
+a {
+    text-decoration: none;
+}
+p {
+    margin: 0px;
+}
+ul {
+    list-style-type: none;
+    padding: 0px;
+}
+
+.clearfix {
+    content: "";
+    display: block;
+    clear:both ;
+}
+
+/*左边样式*/
+.left {
+    height: 100%;
+    width: 20%;
+    background-color: #4c4c4c;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.head_img {
+    height: 80px;
+    width: 80px;
+    overflow: hidden;
+    border: 2px solid white;
+    border-radius: 50%;
+    margin: 10px auto 5px;
+}
+.head_img>img {
+    max-width: 100%;
+}
+
+.head_title,
+.head_desc{
+    color: white;
+    text-align: center;
+    padding: 2px 0px;
+}
+
+.head_me li,
+.head_tag li {
+    text-align: center;
+    padding: 2px;
+}
+
+.head_me a,
+.head_tag a {
+    color: darkgrey;
+    font-size: 14px;
+}
+
+
+.head_me a:hover,
+.head_tag a:hover {
+    color: white;
+    font-size: 14px;
+}
+.head_tag a:before {
+    content: "#";
+}
+
+
+
+/*右边样式*/
+.right {
+    width: 80%;
+    float: right;
+    background-color: #e2e2e2;
+}
+.cont_item {
+    margin: 15px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 3px 3px 3px rgba(0,0,0, 0.2);
+}
+
+.cont_head {
+    position: relative;
+}
+.cont_head .title{
+    font: 24px bold black;
+
+}
+
+.cont_head .date{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+.cont_item .cont_head,.cont_body,.cont_tag{
+    padding: 5px;
+}
+
+.cont_tag span:before{
+    content: '#';
+}
+/*.cont_tag span{*/
+    /*padding: 0 10px;*/
+/*}*/
+.cont_tag .tag1{
+    padding: 0px;
+}
+.cont_tag .tag2{
+    padding: 0px 10px;
+}
+
+
