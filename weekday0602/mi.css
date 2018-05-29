@@ -1,0 +1,232 @@
+/*mi.html的样式文件*/
+
+/*通用标签*/
+
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.container {
+    width: 1226px;
+    margin: 0px auto;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+/*top_bar start*/
+.topbar {
+    width: 100%;
+    height: 40px;
+    background-color: #333;
+}
+
+.topbar a {
+    line-height: 40px;
+    margin-right: 5px;
+    font-size: 12px;
+    color: #b0b0b0;
+
+}
+
+.topbar a:hover {
+    color: white;
+
+}
+
+.topbar_nav li {
+    float: left;
+}
+
+.topbar_right li {
+
+    float: right;
+}
+
+/*top_bar end*/
+
+/*head start*/
+.head {
+    width: 100%;
+    height: 100px;
+}
+
+.head_logo {
+    width: 234px;
+    height: 55px;
+    float: left;
+}
+
+.head_nav li {
+    float: left;
+}
+
+.head_nav a {
+    line-height: 100px;
+    color: black;
+    padding: 0px 10px;
+}
+
+.head_nav a:hover {
+    color: orange;
+}
+
+/*搜索框*/
+.head_search {
+    width: 300px;
+    height: 100px;
+    float: right;
+    position: relative;
+}
+
+.head_search .search_text {
+    width: 240px;
+    height: 50px;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    position: absolute;
+    top: 25px;
+    left: 0px;
+}
+
+.head_search .search_btn {
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    position: absolute;
+    top: 25px;
+    right: 0px;
+}
+
+.head_search .search_btn:hover {
+    background-color: orange;
+}
+
+/*head end*/
+
+/*home start*/
+.home {
+    width: 1226px;
+    height: 460px;
+    position: relative;
+}
+
+.home_left {
+    width: 234px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 901;
+}
+
+.home_left ul {
+    padding: 20px 0;
+}
+
+.home_left li:hover {
+    background-color: orange;
+}
+
+.home_left li {
+    position: relative;
+}
+
+.home_left .title {
+    color: white;
+    height: 42px;
+    line-height: 42px;
+    padding-left: 30px;
+    font-size: 14px;
+}
+
+.home_left .iconfont {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.home_wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: url("fff.png");
+    z-index: 900;
+}
+
+.home_right {
+    width: 992px;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 901;
+}
+
+/*home end*/
+
+/*home_sub start*/
+.home_sub {
+    margin-top: 15px;
+    width: 1226px;
+    height: 170px;
+}
+
+.channel_list{
+    width: 234px;
+    height: 170px;
+    margin-right: 14px;
+    background-color: #5f5750;
+
+}
+.channel_list ul {
+    margin: auto;
+}
+
+.channel_list li {
+    width: 30%;
+    height: 70px;
+    margin: 3px;
+    background-color: yellowgreen;
+    font-size: 14px ;
+}
+
+
+.promo_list li{
+    margin-right: 14px;
+}
+
+.promo_list li:last-child{
+    margin-right: 0px;
+}
+
+
+/*home_sub end*/
