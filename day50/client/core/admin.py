@@ -27,6 +27,9 @@ def register(conn):
 menu = """
 1.登录
 2.注册
+3.
+4.
+5.
 """
 menu_dic = {
     '1': login,
