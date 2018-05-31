@@ -1,0 +1,159 @@
+/*mi.html 的css 文件*/
+
+/*通用部分 start*/
+body{
+    margin: 0;
+
+}
+a{
+    text-decoration: none;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.container{
+    width: 1226px;
+}
+.clearfix:after{
+    content: '';
+    clear: both;
+    display: block;
+}
+/*通用部分 end*/
+
+
+
+/*top_bar start*/
+.mi_topbar{
+    width: 100%;
+    height: 40px;
+    background-color: black;
+}
+
+.mi_topbar .container{
+    width: 1226px;
+    height: 100%;
+    margin: 0px auto;
+}
+
+.mi_topbar a{
+    color: white;
+    font-size: 14px;
+    margin-left: 10px;
+    line-height: 40px;
+}
+
+.mi_topbar a:hover{
+    color: #a0d7e9;
+}
+
+/*top_bar end*/
+
+
+
+/*second_bar start*/
+.second_bar{
+    width: 100%;
+    height: 100px;
+    background-color: white;
+}
+.second_bar .container{
+    width: 1226px;
+    height: 100%;
+    margin: 0px auto;
+}
+
+.second_bar .logo{
+    width: 234px;
+    height: 100%;
+
+}
+.second_bar img{
+    margin: auto 0px;
+}
+.second_bar .bar a{
+    color: black;
+    font-size: 16px;
+    line-height: 100px;
+    margin-left: 10px;
+    text-align: center;
+}
+.second_bar .bar a:hover{
+    color: #a0d7e9;
+}
+
+.second_bar .search {
+    height: 100px;
+}
+
+.second_bar .search input{
+    outline: none;
+    height: 30px;
+    margin-top: 35px;
+}
+
+
+
+
+/*second_bar end*/
+
+
+/*home start*/
+.home{
+    width: 1226px;
+
+    margin: 0px auto;
+}
+.home_left{
+    width: 234px;
+    height: 460px;
+}
+
+.home_left{
+    background-color: black;
+    font-size: 14px;
+    height: 460px;
+
+}
+.home_left ul{
+    margin-top: 20px;
+    position: relative;
+    font-size: 16px;
+}
+.home_left li:hover{
+    background-color: orange;
+    line-height: 42px;
+}
+.home_left a{
+    color: white;
+
+    margin-left: 30px;
+    line-height: 42px;
+}
+.home_left a i{
+    color: white;
+    line-height: 42px;
+    position: absolute;
+    right: 20px;
+}
+.home_bottom{
+    margin-top: 15px;
+}
+.home_bottom li{
+    margin-left: 14.5px;
+}
+.home_bottom li img{
+    height: 170px;
+    width: 316px;
+}
+/*home end*/
