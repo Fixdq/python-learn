@@ -1,0 +1,144 @@
+/*blog css文件*/
+
+/*通用部分*/
+body {
+    margin: 0;
+}
+a {
+    text-decoration: none;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.clearfix:after{
+    content: '';
+    clear: both;
+    display: block;
+}
+.fl {
+    float: left;
+}
+
+.fr{
+    float: right;
+}
+
+/*left*/
+.left {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 20%;
+    height: 100%;
+    background-color: black;
+    font-size: 14px;
+}
+.head {
+    width: 120px;
+    height: 120px;
+    border: 2px solid white;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 15px auto;
+}
+
+.head img{
+    max-width: 100%;
+}
+
+.info {
+    color: white;
+}
+
+.info .name{
+    font-size: 18px;
+    text-align: center;
+}
+.info .msg{
+    font-size: 16px;
+    display: block;
+    text-align: center;
+}
+
+.tag {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+.tag li{
+    text-align: center;
+    margin: 2px 0;
+}
+
+.tag a{
+    color: #a0d7e9;
+    font-size: 16px;
+}
+.tag a:hover{
+    color: white;
+}
+
+.tag .qq:before{
+    content: "#";
+}
+
+
+/*right*/
+.right {
+    width: 80%;
+    right: 0;
+    top: 0;
+    background-color: #888888;
+    padding: 5px;
+}
+
+.article{
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 80% ;
+    border: 1px solid white;
+    background-color: white;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.6);
+    padding: 5px;
+}
+
+.title {
+    padding: 5px;
+}
+
+.title .title_name{
+    font: bold 20px white;
+    line-height: 32px;
+    border-left: 3px solid red;
+}
+.cont{
+    font-size: 16px;
+}
+.title .date{
+    font-size: 16px;
+    line-height: 32px;
+}
+
+.lan {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.lan a{
+    color: black;
+    font-size: 20px;
+}
+.lan span{
+    margin-right: 20px;
+}
+
+.lan a:hover{
+    color: #a0d7e9;
+
+}
+.lan a:before{
+    content: "#";
+}
+
