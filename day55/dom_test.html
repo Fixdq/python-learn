@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS查找标签示例</title>
+
+
+    <style>
+        .cir {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+        .bg_red{
+            background-color: red;
+        }
+        .bg_green{
+            background-color: green;
+        }
+    </style>
+
+</head>
+<body>
+
+<div id="d1">d1</div>
+
+<div class="c1">c1</div>
+<div class="c1">c1</div>
+
+<p>p</p>
+
+<hr>
+
+<div id="d2">
+    <div id="d3">
+        <span id="s1">d2>d3>s1</span>
+    </div>
+    <p id="p1">d2>p1</p>
+</div>
+
+
+
+
+<div class="deng cir bg_red">
+
+
+</div>
+
+<input id="b1" type="button" value="切换">
+
+<input id="b2" type="button" value="切换">
+<script>
+
+
+    let change = function () {
+        let d1 = document.getElementsByClassName('deng')[0]
+        let cls = d1.classList
+        cls.toggle("bg_green")
+    }
+
+    let btn1 = document.getElementById('b1')
+    btn1.onclick = ()=>{
+        change()
+    }
+
+</script>
+</body>
+</html>
