@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义模态框</title>
+    <style>
+        .cover{
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0,0,0,0.4);
+            z-index: 999;
+        }
+        .modal{
+            position: absolute;
+            background-color: white;
+            height: 300px;
+            width: 500px;
+            top: 50%;
+            left: 50%;
+            margin-top: -150px;
+            margin-left: -250px;
+            z-index: 1000;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <p>这是html的正文</p>
+    <input id="btn1" type="button" value="登录">
+</div>
+
+<div class="cover hide">
+    遮罩层
+</div>
+<div class="modal hide">
+    <form action="">
+        <label >用户名<input type="text"></label>
+        <br>
+        <label >密码<input type="text"></label>
+        <br>
+        <input type="submit" value="提交">
+        <input id="btn2" type="button" value="隐藏">
+    </form>
+</div>
+
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+    let cover = $('.cover')
+    let modal = $('.modal')
+    let btn1 = $('#btn1')[0]
+    let btn2 = $('#btn2')[0]
+
+    btn1.onclick=()=>{
+        $(cover[0]).removeClass("hide")
+        $(modal[0]).removeClass("hide")
+    }
+
+    btn2.onclick=()=>{
+        $(cover[0]).addClass("hide")
+        $(modal[0]).addClass("hide")
+    }
+
+</script>
+</body>
+</html>

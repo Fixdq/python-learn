@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>左边菜单</title>
+    <style>
+        .container{
+            width: 100px;
+        }
+        .title{
+            width: 100px;
+            font-size: 15px;
+            background-color: green;
+            border-radius: 20%;
+            margin-top: 2px;
+        }
+        .ops{
+            font-size: 14px;
+            background-color: #7e1487;
+        }
+
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+        <div class="title">菜单01</div>
+        <div class="sel hide">
+            <div class="ops">1111</div>
+            <div class="ops">1111</div>
+            <div class="ops">1111</div>
+            <div class="ops">1111</div>
+            <div class="ops">1111</div>
+        </div>
+        <div class="title">菜单01</div>
+        <div class="sel hide">
+            <div class="ops">22222</div>
+            <div class="ops">22222</div>
+            <div class="ops">22222</div>
+            <div class="ops">22222</div>
+            <div class="ops">22222</div>
+        </div>
+        <div class="title">菜单01</div>
+        <div class="sel hide">
+            <div class="ops">33333</div>
+            <div class="ops">33333</div>
+            <div class="ops">33333</div>
+            <div class="ops">33333</div>
+            <div class="ops">33333</div>
+        </div>
+</div>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+    $(".title").click(function () {
+        $(".sel").addClass("hide");
+        $(this).next().removeClass('hide');
+    });
+
+</script>
+</body>
+</html>
