@@ -21,3 +21,6 @@ print(list1 is list3)
 
 list11 = ["a", "b", "c", "d", "e"]
 print(list11[10:])
+
+
+
