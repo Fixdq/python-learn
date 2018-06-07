@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模拟登陆</title>
+    <style>
+
+        .error{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <p>
+        <label for="username">用户名</label>
+        <input type="text" id="username" name="username">
+        <span class="error"></span>
+    </p>
+    <p>
+        <label for="pwd">密码</label>
+        <input type="text" id="pwd" name="pwd">
+        <span class="error"></span>
+    </p>
+    <input type="submit" id="b1" value="登录">
+</form>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+
+    $("#b1").click(function () {
+
+        var flag = true
+        $username = $("#username");
+        $pwd = $("#pwd");
+        $(".error").text("")
+        if ($username.val().length === 0 ){
+            $username.next().text('用户名不能为空')
+            flag = false
+        }
+         if ($pwd.val().length === 0 ){
+            $pwd.next().text('密码不能为空')
+            flag = false
+        }
+        return flag
+    })
+
+</script>
+</body>
+</html>

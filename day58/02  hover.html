@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hover事件</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav{
+            width: 100%;
+            height: 40px;
+            background-color: #3d3d3d;
+        }
+        a{
+            text-decoration: none;
+        }
+        p{
+            margin: 0;
+            padding: 0;
+        }
+        .nav a{
+            color: #999;
+            height: 40px;
+            line-height: 40px;
+        }
+        .nav li{
+            padding: 0 10px;
+        }
+        .nav li:hover{
+            background-color: black;
+        }
+        .fl{
+            float: left;
+        }
+        .father{
+            position:relative;
+        }
+        .son{
+            display: none;
+            width: 150px;
+            height: 100px;
+            background-color: #a0d7e9;
+            color: #7e1487;
+            position: absolute;
+            top: 40px;
+            left: 0;
+        }
+
+
+        .show{
+            display: block;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="nav">
+    <ul>
+        <li class="fl"><a id="login" href="">登录</a></li>
+        <li class="fl"><a href="">注册</a></li>
+        <li class="fl father "><a href="">购物车</a> <p class="son">该买东西啦</p></li>
+    </ul>
+</div>
+
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+    $(".father").hover(
+        function () {
+            $(".son").addClass('show')
+        },
+        function () {
+            $(".son").removeClass('show')
+        }
+    )
+
+</script>
+<script>
+
+//    click(function(){...});  // 点击事件
+//    hover(function(){...});  // 悬浮事件
+//    blur(function(){...});  // 当输入域失去焦点时触发事件
+//    focus(function(){...});  // 点输入域获得焦点时触发事件
+//    change(function(){...});  // 当元素的值发生改变的时候，触发时间
+//    keydown(function(){...});  // 按键按下时触发事件
+//    keyup(function(){...});  // 按钮松开时触发时间
+
+</script>
+</body>
+</html>

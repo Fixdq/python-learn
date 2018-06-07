@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>work</title>
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        .main {
+
+        }
+
+        .cover {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+
+        }
+
+        .modal {
+            position: absolute;
+            width: 500px;
+            height: 300px;
+            top: 50%;
+            left: 50%;
+            margin-top: -150px;
+            margin-left: -250px;
+            background-color: white;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .tb {
+            border: 3px solid #741a7b;
+        }
+    </style>
+</head>
+<body>
+<input id="b1" type="button" value="注册">
+<div class="main">
+    <table class="tb" border="1">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>姓名</th>
+            <th>爱好</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>Egon</td>
+            <td>喊麦</td>
+            <td>
+                <input type="button" value="编辑" class="edit">
+                <input type="button" value="删除" class="delete">
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Alex</td>
+            <td>吹牛逼</td>
+            <td>
+                <input type="button" value="编辑" class="edit">
+                <input type="button" value="删除" class="delete">
+            </td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>苑昊</td>
+            <td>不洗头</td>
+            <td>
+                <input type="button" value="编辑" class="edit">
+                <input type="button" value="删除" class="delete">
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+</div>
+<div class="cover hide">
+
+</div>
+<div class="modal hide">
+    <label>用户名<input type="text" name="username"></label>
+    <br>
+    <label>爱好<input type="text" name="hobby"></label>
+    <br>
+    <input id="b2" type="button" value="提交">
+    <input id="b3" type="button" value="取消">
+
+</div>
+
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+    var $btn_show = $("#b1");
+    var $btn_sub = $("#b2");
+    var $btn_hide = $("#b3");
+
+    var $cover = $(".cover");
+    var $modal = $(".modal");
+
+    var $btn_delte = $(".delete");
+
+
+    //注册
+    $btn_show.click(function () {
+        $cover.removeClass('hide');
+        $modal.removeClass('hide');
+    });
+
+    //取消
+    $btn_hide.click(function () {
+        $cover.addClass('hide');
+        $modal.addClass('hide');
+    });
+
+
+
+    //提交
+    $btn_sub.click(function () {
+        $cover.addClass('hide');
+        $modal.addClass('hide');
+
+
+        //注意 html中table没有放在form里面，如果放在form中 .text()需要更换为.val()
+
+
+        $("table tabler:last").clone(true).children().first().text(parseInt($("table tr:last").clone(true).children().first().text())+1).next().text($("input[name='username']").val()).next().text($("input[name='hobby']").val()).parent().insertAfter($("table tr:last"))
+
+
+        // $name = $("input[name='username']").val()
+        // $hobby = $("input[name='hobby']").val()
+        //
+        //  //获取最后一行tr
+        // $trl = $("table tr:last")
+        // var $trc = $("table tr:last").clone(true)
+        // var $tdc = $trc.children().first()
+        // $tdc.text(parseInt($tdc.text())+1).next().text($name).next().text($hobby)
+        //
+        // $trc.insertAfter($trl)
+
+    })
+
+    //每行的删除操作
+    $btn_delte.click(function () {
+        $(this).parent().parent().remove()
+    })
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQurey练习</title>
+    <style>
+
+        .d1{
+            height: 100px;
+            width: 100px;
+            position: relative;
+            /*background-color: rgba(0,0,0,0.4);*/
+
+        }
+        .d2{
+            height: 120px;
+            width: 120px;
+            background-color: #a0d7e9;
+            position: absolute;
+            padding: 10px;
+            margin: 10px;
+            border: 10px solid red;
+            top: 150px;
+            left: 100px;
+
+        }
+    </style>
+</head>
+<body>
+
+<div class="d1">
+    这是外层
+    <div class="d2">
+        这是内层
+        <p>
+            <input type="text" value="这是一个输入框" name="in">
+        </p>
+    </div>
+
+</div>
+
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+    var inner = document.getElementsByClassName('d2')[0]
+    inner.style.color='red';
+
+    $(".d1").css('color','blue');
+    $(".d2").css('width','50px');
+    $(".d2").css('height','50px');
+    $(".d1").css('background-color','rgba(0,0,0,0.4)');
+    // $(".d1").css('background-color','red');
+    $(".d2").html()
+    $(".d2").html()
+</script>
+</body>
+</html>

@@ -58,6 +58,7 @@ print('填充和对齐'.center(50, '-'))
 # 填充与对齐
 print('FIXD'.center(30,'^'))
 
+
 # 左填充
 print('{:#>20},{:#>20}'.format('FIXD','qewe'))
 print('{:>20}'.format('FIXD'))

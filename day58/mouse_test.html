@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TEST</title>
+    <style>
+        .d1{
+            width: 100px;
+            height: 100px;
+            background-color: #7e1487;
+        }
+
+        .d2{
+            width: 100px;
+            height: 100px;
+            background-color: #a0d7e9;
+        }
+
+
+        .blue{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+<div class="d1">
+
+
+</div>
+<div class="d2">
+
+
+</div>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+
+    $('.d1').on('mouseenter',function () {
+        alert('进入了')
+        $(this).addClass('.blue')
+    })
+</script>
+</body>
+</html>
