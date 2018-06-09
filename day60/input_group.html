@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>输入框控件</title>
+    <link rel="stylesheet" href="bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="awesome-4.7.0/css/font-awesome.min.css">
+    <style>
+        .my-btn-len{
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+
+            <div class="input-group">
+                <div class="input-group-btn">
+                    <button type="button" class="btn btn-default btn-main"><i class="fa fa-plus-square" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" class="btn btn-default my-btn-len">IP</button>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false" >
+                        <span class="caret"></span>
+                        <!--<span class="sr-only">Toggle Dropdown</span>-->
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li class="menu_item"><a href="#">IP</a></li>
+                        <li class="menu_item"><a href="#">WLAN</a></li>
+                        <li class="menu_item"><a href="#">状态</a></li>
+                    </ul>
+                </div>
+                <input class="form-control" aria-label="Text input with segmented button dropdown" type="text"
+                       placeholder="逗号分割多个条件">
+            </div><!-- /.input-group -->
+
+        </div><!-- /.row -->
+
+    </div>
+</div>
+
+
+<script src="jquery-3.3.1.min.js"></script>
+<script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script>
+// <!--事件测试-->
+// $('.input-group-btn').on('show.bs.dropdown', function () {
+//   console.log('show')
+// })
+//     $('.input-group-btn').on('shown.bs.dropdown', function () {
+//   console.log('shown')
+// })
+//     $('.input-group-btn').on('hide.bs.dropdown', function () {
+//   console.log('hide')
+//         // $(this).relatedTarget('bian')
+// })
+//     $('.input-group-btn').on('hidden.bs.dropdown', function () {
+//   console.log('hidden')
+// })
+// $('.dropdown-toggle').dropdown()
+// <!--事件测试-->
+
+    $('.menu_item').on('click',function () {
+        let seletec_value = $(this).children().first().text()
+        $($(this).parent().parent().children()[1]).text(seletec_value)
+    })
+
+
+    $(".btn-main").on('click',function () {
+        if ($(this).children().first().hasClass('fa-plus-square')){
+            console.log('add')
+            var $row = $(this).parent().parent().parent().children().first().clone(true);
+            $row.children().first().children().first().children().removeClass('fa-plus-square').addClass('fa-minus-square');
+            $($row.children().first().children()[1]).text('IP');
+            $(this).parent().parent().parent().append($row);
+        }else {
+            console.log('delete')
+            $(this).parent().parent().remove();
+        }
+
+    });
+
+</script>
+</body>
+</html>

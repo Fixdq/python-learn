@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>管理后台</title>
+    <link rel="stylesheet" href="bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="sweetalert/sweetalert.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <style>
+        body {
+            padding-top: 70px;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Brand</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">Link</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Link</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">Reports</a></li>
+                <li><a href="#">Analytics</a></li>
+                <li><a href="#">Export</a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li><a href="">Nav item</a></li>
+                <li><a href="">Nav item again</a></li>
+                <li><a href="">One more nav</a></li>
+                <li><a href="">Another nav item</a></li>
+                <li><a href="">More navigation</a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li><a href="">Nav item again</a></li>
+                <li><a href="">One more nav</a></li>
+                <li><a href="">Another nav item</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">图书信息管理系统</h1>
+            <!--面板 start-->
+            <div class="panel panel-primary">
+
+                <div class="panel-heading">
+                    <h3 class="panel-title">出版社管理</h3>
+                </div>
+                <!--搜索 start-->
+                <div class="panel-body">
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search for...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">Go!</button>
+                            </span>
+                        </div><!-- /input-group -->
+                    </div><!-- /.col-md-4 -->
+                    <div class="col-md-8">
+                        <button type="button" class="btn btn-success pull-right">新增</button>
+                    </div>
+                </div>
+                <!--搜索 end-->
+                <div class="panel-body">
+                    <table class="table table-bordered">
+
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Id</th>
+                            <th>出版社名称</th>
+                            <th>地址</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row ">1</th>
+                            <td>1</td>
+                            <td>沙河出版社</td>
+                            <td>沙河地特战</td>
+                            <td>
+                                <div class="btn-block text-center">
+                                    <button type="button" class="btn btn-success"><i class="fa fa-pencil"
+                                                                                     aria-hidden="true"></i>编辑
+                                    </button>
+
+                                    <button type="button" class="btn btn-danger"><i class="fa fa-trash"
+                                                                                    aria-hidden="true"></i>删除
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row ">1</th>
+                            <td>1</td>
+                            <td>沙河出版社</td>
+                            <td>沙河地特战</td>
+                            <td>
+                                <div class="btn-block text-center">
+                                    <button type="button" class="btn btn-success"><i class="fa fa-pencil"
+                                                                                     aria-hidden="true"></i>编辑
+                                    </button>
+
+                                    <button type="button" class="btn btn-danger"><i class="fa fa-trash"
+                                                                                    aria-hidden="true"></i>删除
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row ">1</th>
+                            <td>1</td>
+                            <td>沙河出版社</td>
+                            <td>沙河地特战</td>
+                            <td>
+                                <div class="btn-block text-center">
+                                    <button type="button" class="btn btn-success"><i class="fa fa-pencil"
+                                                                                     aria-hidden="true"></i>编辑
+                                    </button>
+
+                                    <button type="button" class="btn btn-danger"><i class="fa fa-trash"
+                                                                                    aria-hidden="true"></i>删除
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row ">1</th>
+                            <td>1</td>
+                            <td>沙河出版社</td>
+                            <td>沙河地特战</td>
+                            <td>
+                                <div class="btn-block text-center">
+                                    <button type="button" class="btn btn-success"><i class="fa fa-pencil"
+                                                                                     aria-hidden="true"></i>编辑
+                                    </button>
+
+                                    <button type="button" class="btn btn-danger"><i class="fa fa-trash"
+                                                                                    aria-hidden="true"></i>删除
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row ">1</th>
+                            <td>1</td>
+                            <td>沙河出版社</td>
+                            <td>沙河地特战</td>
+                            <td>
+                                <div class="btn-block text-center">
+                                    <button type="button" class="btn btn-success"><i class="fa fa-pencil"
+                                                                                     aria-hidden="true"></i>编辑
+                                    </button>
+
+                                    <button type="button" class="btn btn-danger"><i class="fa fa-trash"
+                                                                                    aria-hidden="true"></i>删除
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row ">1</th>
+                            <td>1</td>
+                            <td>沙河出版社</td>
+                            <td>沙河地特战</td>
+                            <td>
+                                <div class="btn-block text-center">
+                                    <button type="button" class="btn btn-success"><i class="fa fa-pencil"
+                                                                                     aria-hidden="true"></i>编辑
+                                    </button>
+
+                                    <button type="button" class="btn btn-danger"><i class="fa fa-trash"
+                                                                                    aria-hidden="true"></i>删除
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+                <!--分页 start-->
+                <nav aria-label="Page navigation">
+                    <ul class="pagination pull-right">
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!--分页 end-->
+            </div>
+            <!--面板 end-->
+        </div>
+    </div>
+
+</div>
+<script src="jquery-3.3.1.min.js"></script>
+<script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="sweetalert/sweetalert.min.js"></script>
+<script>
+
+</script>
+</body>
+</html>
